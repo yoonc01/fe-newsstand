@@ -39,6 +39,7 @@ body {
   color: #14212B;
   font-weight: bold;
 }
+
 .TodaysDate {
   position: absolute;
   top: 65px;
@@ -156,9 +157,139 @@ body {
 .list-view {
   width: 24px;
   height: 24px;
+  background: url("./asset/list-view.svg") no-repeat center center;
+  background-size: cover;
+  border: 1px;
 }
 
 .grid-view {
   width: 24px;
   height: 24px;
+  background: url("./asset/grid-view.svg") no-repeat center center;
+  background-size: cover;
+  border: 1px;
+}
+
+.NewsList {
+  position: absolute;
+  top: 256px;
+  left: 175px;
+  width: auto;
+  height: auto;
+}
+
+.FieldTab {
+  width: 930px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border : 1px solid #D2DAE0;
+}
+
+.all {
+  width: 166px;
+  height: 40px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #7890E7;
+}
+
+.all-text {
+  width: 95.77px;
+  height: 17px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.all-percentage {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.current-all-cnt {
+  width: 8px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #FFFFFF;
+}
+
+.division {
+  width: 4px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
+.all-cnt {
+  width: 14px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
+.broad {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.it {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.english {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.sports {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.magazine {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
+}
+
+.region {
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  gap: 8px;
+  float: left;
+  cursor: pointer;
 }
