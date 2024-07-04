@@ -182,7 +182,7 @@ body {
   position: absolute;
   top: 256px;
   left: 175px;
-  width: auto;
+  width: 930px;
   height: auto;
 }
 
@@ -583,11 +583,12 @@ body {
   width: 930px;
   height: auto;
   border: 1px solid #D2DAE0;
+  overflow: hidden;
   padding: 24px;
 }
 
 .PressInfo {
-  width: 930px;
+  width: 100px;
   height: auto;
   display: flex;
   align-items: center;
@@ -620,21 +621,21 @@ body {
 }
 
 .News {
-  width: 100%;
+	width: 100px;
   height: auto;
   display: flex;
 }
 
 .Main {
   width: 320px;
-  height: auto;
+  height: 260px;
   cursor: pointer;
 }
 
 .Thumbnail {
   width: 320px;
   height: 200px;
-  border: 1px #D2DAE0;
+  border: 1px solid #D2DAE0;
   background: url("./asset/Thumbnail.svg") no-repeat center center;
   background-size: cover;
 }
@@ -644,13 +645,13 @@ body {
   height: 44px;
   font-size: 16px;
   line-height: 22px;
-  margin: 32px 0;
+  margin: 16px 0;
   color: #14212B;
   font-weight: bold;
 }
 
 .Sub {
-  width: 100%;
+  width: 30px;
   height: auto;
 }
 
@@ -659,13 +660,13 @@ body {
 }
 
 .Sub li {
-	width: calc(100% - 48px);
+	width: 330px;
 	height: 22px;
 	font-size: 16px;
 	line-height: 22px;
 	color: #4B5966;
 	list-style-type: none;
-	margin: 0 0 16px 0;
+	margin: 16px 0;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
