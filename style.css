@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Pretendard-variable';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+  font-family: "Pretendard-variable";
+  margin: 0 auto;
+  width: 1280px;
+}
+
+.Container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+}
+.Title {
+  position: absolute;
+  top: 58px;
+  left: 175px;
+  display: flex;
+  align-items: center; /*수직 가운데 정렬 */
+  justify-content: center; /*수평 가운데 정렬 */
+  gap: 8px;
+}
+
+.Title-Icon {
+  width: 24px;
+  height: 24px;
+}
+
+.Title-text {
+  width: 104px;
+  height: 29px;
+  font-size: 24px;
+  line-height: 28.13px;
+  color: #14212B;
+  font-weight: bold;
+}
+.TodaysDate {
+  position: absolute;
+  top: 65px;
+  left: 965px;
+  width: 140px;
+  height: 22px;
+  font-size: 16px;
+  color: #5F6E76;
+  line-height: 22px;
+}
+
+.Button {
+  width: 24px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.LeftButton {
+  position: absolute;
+  top: 430px;
+  left: 104px;
+  background: url("./asset/LeftButton.svg") no-repeat center center;
+  background-size: cover;
+}
+
+.RightButton {
+  position: absolute;
+  top: 430px;
+  left: 1153px;
+  background: url("./asset/RightButton.svg") no-repeat center center;
+  background-size: cover;
+}
+
+.AutoRollingNewsBar {
+  position: absolute;
+  top: 127px;
+  left: 175px;
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #F5F7F9;
+  border: 1px;
+}
+
+.AutoRollingNews {
+  width: auto;
+  height: auto;
+  border: 1px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.Press {
+  width: 49px;
+  height: 17px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #14212B;
+  font-weight: bold;
+}
+
+.NewsTitle {
+  width: 364px;
+  height: 17px;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #5F6E76;
+}
+
+.Tab-and-Viewer {
+  position: absolute;
+  width: 930px;
+  height: auto;
+  top: 208px;
+  left: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TapButton {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.AllPress {
+  width: 82px;
+  Height: 19px;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #14212B;
+  font-weight: bold;
+}
+
+.ViewerButton {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.list-view {
+  width: 24px;
+  height: 24px;
+}
+
+.grid-view {
+  width: 24px;
+  height: 24px;
+}
