@@ -3,6 +3,7 @@
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -16,13 +17,13 @@ body {
   width: 1280px;
   height: 720px;
 }
+
 .Title {
   position: absolute;
   top: 58px;
   left: 175px;
   display: flex;
   align-items: center; /*수직 가운데 정렬 */
-  justify-content: center; /*수평 가운데 정렬 */
   gap: 8px;
 }
 
@@ -31,7 +32,7 @@ body {
   height: 24px;
 }
 
-.Title-text {
+.Title-Text {
   width: 104px;
   height: 29px;
   font-size: 24px;
@@ -78,50 +79,50 @@ body {
   position: absolute;
   top: 127px;
   left: 175px;
-  display: flex;
+  width: 930px;
   height: auto;
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  background-color: #F5F7F9;
-  border: 1px;
 }
 
 .AutoRollingNews {
   width: auto;
   height: auto;
-  border: 1px;
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
+  justify-content: center;
+  border: 1px solid #D2DAE0;
+  background-color: #F5F7F9;
 }
 
-.Press {
+.AutoRollingNews-Press {
   width: 49px;
   height: 17px;
-  text-overflow: ellipsis;
   font-size: 14px;
   line-height: 16.41px;
+  text-overflow: ellipsis;
   color: #14212B;
   font-weight: bold;
 }
 
-.NewsTitle {
+.AutoRollingNews-NewsTitle {
   width: 364px;
   height: 17px;
   font-size: 14px;
   line-height: 16.41px;
+  text-overflow: ellipsis;
   color: #5F6E76;
 }
 
 .Tab-and-Viewer {
   position: absolute;
-  width: 930px;
-  height: auto;
   top: 208px;
   left: 175px;
+  width: 930px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -158,46 +159,65 @@ body {
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
 .list-view {
+  position: relative;
   width: 24px;
   height: 24px;
-  background: url("./asset/list-view.svg") no-repeat center center;
+  border: none;
+}
+
+.list-symbol {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: url("./asset/list-symbol.svg") no-repeat center center;
   background-size: cover;
-  border: 1px;
+  border: none;
 }
 
 .grid-view {
+  position: relative;
   width: 24px;
   height: 24px;
-  background: url("./asset/grid-view.svg") no-repeat center center;
+}
+
+.grid-symbol {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: url("./asset/grid-symbol.svg") no-repeat center center;
   background-size: cover;
-  border: 1px;
+  border: none;
 }
 
 .NewsList {
   position: absolute;
   top: 256px;
   left: 175px;
-  width: 930px;
+  width: auto;
   height: auto;
 }
 
 .FieldTab {
   width: 930px;
   height: 40px;
-  overflow: hidden;
   border : 1px solid #D2DAE0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .Field-chosen {
-  width: 95.77px;
+  width: 97.77px;
   height: 17px;
   font-size: 14px;
+  line-height: 16.41px;
   color: #FFFFFF;
 }
 
@@ -225,11 +245,10 @@ body {
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2px;
 }
 
-.current-all-cnt {
+.current-all {
   width: 8px;
   height: 14px;
   font-size: 12px;
@@ -283,21 +302,12 @@ body {
   gap: 2px;
 }
 
-.current-broad-cnt {
+.current-broad {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .broad-cnt {
@@ -337,21 +347,12 @@ body {
   gap: 2px;
 }
 
-.current-it-cnt {
+.current-it {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .it-cnt {
@@ -391,21 +392,12 @@ body {
   gap: 2px;
 }
 
-.current-english-cnt {
+.current-english {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .english-cnt {
@@ -445,21 +437,12 @@ body {
   gap: 2px;
 }
 
-.current-sports-cnt {
+.current-sports {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .sports-cnt {
@@ -499,21 +482,12 @@ body {
   gap: 2px;
 }
 
-.current-magazine-cnt {
+.current-magazine {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .magazine-cnt {
@@ -553,21 +527,12 @@ body {
   gap: 2px;
 }
 
-.current-region-cnt {
+.current-region {
   width: 8px;
   height: 14px;
   font-size: 12px;
   line-height: 14.06px;
   color: #FFFFFF;
-}
-
-.division {
-  width: 4px;
-  height: 14px;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #FFFFFF;
-  opacity: 0.7;
 }
 
 .region-cnt {
@@ -583,12 +548,12 @@ body {
   width: 930px;
   height: auto;
   border: 1px solid #D2DAE0;
-  overflow: hidden;
   padding: 24px;
+  box-sizing: border-box;
 }
 
 .PressInfo {
-  width: 100px;
+  width: auto;
   height: auto;
   display: flex;
   align-items: center;
@@ -630,6 +595,7 @@ body {
   width: 320px;
   height: 260px;
   cursor: pointer;
+  margin: 0 32px 0 0;
 }
 
 .Thumbnail {
@@ -651,23 +617,32 @@ body {
 }
 
 .Sub {
-  width: 30px;
+  width: auto;
   height: auto;
 }
 
 .Sub ul {
 	margin: 0;
+  padding: 0;
 }
 
 .Sub li {
-	width: 330px;
+	width: 530px;
 	height: 22px;
 	font-size: 16px;
 	line-height: 22px;
 	color: #4B5966;
 	list-style-type: none;
-	margin: 16px 0;
+	margin: 0 0 16px 0;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.Caption {
+  width: 530px;
+  height: 17px;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #879298;
 }
