@@ -6,6 +6,24 @@
     font-display: swap;
 }
 
+.AutoRollingNews-Press:hover,
+.AutoRollingNews-NewsTitle:hover,
+.AllPress:hover,
+.SubscribedPress:hover,
+.Field-chosen:hover,
+.all-text:hover,
+.broad-text:hover,
+.it-text:hover,
+.english-text:hover,
+.sports-text:hover,
+.magazine-text:hover,
+.region-tex:hover,
+.Main:hover
+ {
+  text-decoration: underline;
+}
+
+
 body {
   font-family: "Pretendard-variable";
   margin: 0 auto;
@@ -25,6 +43,7 @@ body {
   display: flex;
   align-items: center; /*수직 가운데 정렬 */
   gap: 8px;
+  cursor: pointer;
 }
 
 .Title-Icon {
@@ -47,6 +66,7 @@ body {
   left: 965px;
   width: 140px;
   height: 22px;
+  text-align: right;
   font-size: 16px;
   color: #5F6E76;
   line-height: 22px;
@@ -106,6 +126,7 @@ body {
   text-overflow: ellipsis;
   color: #14212B;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .AutoRollingNews-NewsTitle {
@@ -115,6 +136,7 @@ body {
   line-height: 16.41px;
   text-overflow: ellipsis;
   color: #5F6E76;
+  cursor: pointer;
 }
 
 .Tab-and-Viewer {
@@ -144,6 +166,7 @@ body {
   line-height: 18.75px;
   color: #14212B;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .SubscribedPress {
@@ -152,6 +175,7 @@ body {
 	font-size: 16px;
 	line-height: 22px;
 	color: #879298;
+  cursor: pointer;
 }
 
 .ViewerButton {
@@ -178,6 +202,7 @@ body {
   background: url("./asset/list-symbol.svg") no-repeat center center;
   background-size: cover;
   border: none;
+  cursor: pointer;
 }
 
 .grid-view {
@@ -195,6 +220,7 @@ body {
   background: url("./asset/grid-symbol.svg") no-repeat center center;
   background-size: cover;
   border: none;
+  cursor: pointer;
 }
 
 .NewsList {
