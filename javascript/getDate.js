@@ -1,8 +1,11 @@
 function	timeToSleep()
 {
 	const	now = new Date();
-	const	passed = now.getSeconds() * 1000 + now.getMilliseconds();
-	return (3600000 - passed);
+	const	sleepTime =
+		(60 - now.getMinutes()) * 60 * 1000 -
+		now.getSeconds() * 1000 -
+		now.getMilliseconds();
+	return (sleepTime);
 }
 
 export function	getTodaysDate() {
@@ -18,8 +21,5 @@ export function	getTodaysDate() {
 	if (element)
 		element.textContent = todaysDate;
 	const	sleepTime = timeToSleep();
-	if (sleepTime < 2200000)
-		setTimeout(getTodaysDate, Math.round(sleepTime / 2));
-	else
-		setTimeout(getTodaysDate, sleepTime);
+	setTimeout(getTodaysDate, sleepTime);
 }
