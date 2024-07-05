@@ -18,8 +18,8 @@
 .sports-text:hover,
 .magazine-text:hover,
 .region-tex:hover,
-.Main:hover
- {
+.Main:hover,
+li:hover {
   text-decoration: underline;
 }
 
@@ -609,6 +609,7 @@ body {
   padding: 0 6px 0 6px;
   gap: 2px;
   background-color: #F5F7F9;
+  cursor: pointer;
 }
 
 .News {
@@ -663,6 +664,7 @@ body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+  cursor: pointer;
 }
 
 .Caption {
