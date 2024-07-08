@@ -1,5 +1,5 @@
 import { getTodaysDate } from "./getDate.js";
-import {initEvent} from "./Init_event.js";
+import {initEvent} from "./initEvent.js";
 import {initData} from "./initData.js";
 import {Deque} from "./Deque.js";
 
@@ -14,20 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 		.then(data => {
 			initData(data, typeDeques);
-			for (const [type, deque] of Object.entries(typeDeques)) {
-                console.log(`Type: ${type}`);
-                console.log(`Deque size: ${deque.size()}`);
-                console.log('Companies in Deque:');
-                for (let i = deque.front; i < deque.rear; i++) {
-                    const company = deque.items[i];
-                    console.log(`  - ${company.companyName}`);
-                }
-                console.log('---');
-            }
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);
 		});
+		console.log(typeDeques["IT"]);
 	initEvent();
 	getTodaysDate();
 });
