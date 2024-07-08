@@ -1,2 +1,7 @@
 import { getTodaysDate } from "./getDate.js";
-getTodaysDate();
+import {initEvent} from "./Init_event.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+	initEvent();
+	getTodaysDate();
+});
