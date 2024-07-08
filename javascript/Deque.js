@@ -1,4 +1,4 @@
-class Deque {
+export class Deque {
 	/*
 	*생성자
 	*/
