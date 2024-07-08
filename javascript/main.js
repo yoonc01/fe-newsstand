@@ -1,6 +1,6 @@
 import { getTodaysDate } from "./getDate.js";
 import {initEvent} from "./Init_event.js";
-import {getData} from "./getData.js";
+import {initData} from "./initData.js";
 import {Deque} from "./Deque.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			return response.json();
 		})
 		.then(data => {
-			getData(data, typeDeques);
+			initData(data, typeDeques);
 			for (const [type, deque] of Object.entries(typeDeques)) {
                 console.log(`Type: ${type}`);
                 console.log(`Deque size: ${deque.size()}`);

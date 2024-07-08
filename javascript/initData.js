@@ -1,6 +1,9 @@
 import {Deque} from "./Deque.js"
 
-export	function	getData(data, typeDeques) {
+/*
+* 외부에서 data를 받아와 typeDeques에 뉴스 타입별로 deque 생성 및 저장
+*/
+export	function	initData(data, typeDeques) {
 	data.forEach(item => {
 		const	type = item.type;
 
@@ -12,5 +15,4 @@ export	function	getData(data, typeDeques) {
 			typeDeques[type].addRear(company);
 		});
 	});
-	return (typeDeques);
 }
