@@ -75,45 +75,6 @@
   opacity: 0.7;
 }
 
-.broad {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.broad-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .broad-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.broad-percentage {
-  display: none;
-}
-
-.Field-chosen .broad-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
 .current-broad {
   width: 8px;
   height: 14px;
@@ -129,45 +90,6 @@
   line-height: 14.06px;
   color: #FFFFFF;
   opacity: 0.7;
-}
-
-.it {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.it-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .it-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.it-percentage {
-  display: none;
-}
-
-.Field-chosen .it-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
 }
 
 .current-it {
@@ -187,45 +109,6 @@
   opacity: 0.7;
 }
 
-.english {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.english-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .english-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.english-percentage {
-  display: none;
-}
-
-.Field-chosen .english-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
 .current-english {
   width: 8px;
   height: 14px;
@@ -241,45 +124,6 @@
   line-height: 14.06px;
   color: #FFFFFF;
   opacity: 0.7;
-}
-
-.sports {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.sports-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .sports-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.sports-percentage {
-  display: none;
-}
-
-.Field-chosen .sports-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
 }
 
 .current-sports {
@@ -299,45 +143,6 @@
   opacity: 0.7;
 }
 
-.magazine {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.magazine-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .magazine-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.magazine-percentage {
-  display: none;
-}
-
-.Field-chosen .magazine-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
 .current-magazine {
   width: 8px;
   height: 14px;
@@ -353,45 +158,6 @@
   line-height: 14.06px;
   color: #FFFFFF;
   opacity: 0.7;
-}
-
-.region {
-  float: left;
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.region-text {
-  width: auto;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #879298;
-}
-
-.Field-chosen .region-text {
-  width: 97.77px;
-  height: 17px;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: #FFFFFF;
-}
-
-.region-percentage {
-  display: none;
-}
-
-.Field-chosen .region-percentage {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  gap: 2px;
 }
 
 .current-region {
