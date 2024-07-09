@@ -12,9 +12,13 @@ function refresh() {
 	});
 }
 
+function clickTab() {
+
+}
+
 /*
 *외부에서 사용할 함수 다른 추가적인 함수 생성되면 추가할 예정
 */
-export	function	initEvent() {
+export	function	addEvents() {
 	refresh();
 }

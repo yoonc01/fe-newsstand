@@ -1,6 +1,6 @@
 import { getTodaysDate } from "./getDate.js";
-import {initEvent} from "./initEvent.js";
-import {initData, setNewsList} from "./initData.js";
+import {addEvents} from "./events.js";
+import {initData, initNewsList} from "./initData.js";
 import {Deque} from "./Deque.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 		.then(data => {
 			initData(data, typeDeques);
-			setNewsList(typeDeques);
+			initNewsList(typeDeques);
 			console.log(typeDeques["IT"].peekFront());
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);
 		});
-	initEvent();
+	addEvents();
 	getTodaysDate();
 });
