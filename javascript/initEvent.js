@@ -6,7 +6,7 @@
 *title 클릭 시 새로고침
 */
 function refresh() {
-	const titleElements = document.getElementsByClassName("Title");
+	const	titleElements = document.getElementsByClassName("Title");
 	titleElements[0].addEventListener("click", function() {
 		location.reload();
 	});
