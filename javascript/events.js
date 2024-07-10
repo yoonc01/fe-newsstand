@@ -27,14 +27,21 @@ function clickTab() {
 	{
 		fieldTabElement.addEventListener("click", function(event) {
 			const	parentWithClassTab = findParentWithClass(event.target, "Tab");
+			const	pressNews = document.querySelectorAll(".PressNews");
 			if (parentWithClassTab === null)
 				;
 			else
 			{
 				const	chosenElement = document.querySelector(".Field-chosen");
+				const	tabName = parentWithClassTab.getAttribute("data-tab");
 				if (chosenElement)
 					chosenElement.classList.remove("Field-chosen");
 				parentWithClassTab.classList.add("Field-chosen");
+				pressNews.forEach(content => {
+					content.classList.remove("NewsChosen");
+					if (content.classList.contains(tabName))
+						content.classList.add("NewsChosen");
+				});
 			}
 		});
 	}
