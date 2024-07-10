@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		.then(data => {
 			initData(data, typeDeques);
 			initNewsList(typeDeques, typenames);
+			getTodaysDate();
+			addEvents(typenames, typeDeques);
 			console.log(typeDeques[typenames[0]].peekFront());
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);
 		});
-	addEvents();
-	getTodaysDate();
 });

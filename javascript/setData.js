@@ -25,13 +25,13 @@ function	setPressInfo(fieldName, Deque) {
 		const	editDateElement = fieldElement.querySelector(".EditDate");
 		const	brandMarkElement = fieldElement.querySelector(".Brandmark");
 		const	subscribeButtonElement = fieldElement.querySelector(".SubscribeButton");
-		const	src = Deque.items[0].companyLogo;
-		const	is_subscribed = Deque.items[0].isSubscribe;
+		const	src = Deque.peekFront().companyLogo;
+		const	is_subscribed = Deque.peekFront().isSubscribe;
 
 		if (brandMarkElement)
 			brandMarkElement.innerHTML = `<img src=${src}>`;
 		if (editDateElement)
-			editDateElement.textContent = Deque.items[0].updatedDate;
+			editDateElement.textContent = Deque.peekFront().updatedDate;
 		if (subscribeButtonElement)
 		{
 			if (is_subscribed)
@@ -51,12 +51,12 @@ function	setMain(fieldName, Deque) {
 	{
 		const	ThumbnailElement = fieldElement.querySelector(".Thumbnail");
 		const	mainTitleElement = fieldElement.querySelector(".MainTitle");
-		const	src = Deque.items[0].mainNews.src;
+		const	src = Deque.peekFront().mainNews.src;
 
 		if (ThumbnailElement)
 			ThumbnailElement.innerHTML = `<img src=${src}>`;
 		if (mainTitleElement)
-			mainTitleElement.textContent = Deque.items[0].mainNews.title;
+			mainTitleElement.textContent = Deque.peekFront().mainNews.title;
 	}
 }
 
@@ -69,8 +69,8 @@ function	setSub(fieldName, Deque) {
 	{
 		const	subElement = fieldElement.querySelector(".Sub");
 		const	captionElement = fieldElement.querySelector(".Caption");
-		const	subNewsArray = Deque.items[0].news;
-		const	newsName = Deque.items[0].companyName;
+		const	subNewsArray = Deque.peekFront().news;
+		const	newsName = Deque.peekFront().companyName;
 		let		subNews = "<ul>";
 
 		for (let news of subNewsArray)

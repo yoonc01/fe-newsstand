@@ -73,7 +73,7 @@
 				"companyId": 2,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "YTN사이언스",
-				"updatedDate": "07월 03일 10:24 직접 편집",
+				"updatedDate": "07월 03일 10:24 편집",
 				"isSubscribe": true,
 				"mainNews": {
 					"id": 1,
@@ -99,7 +99,7 @@
 				"companyId": 3,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "ECONOTIMES",
-				"updatedDate": "07월 02일 23:51 직접 편집",
+				"updatedDate": "07월 02일 23:51 편집",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
@@ -119,7 +119,7 @@
 				"companyId": 3,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "ECONOTIMES",
-				"updatedDate": "07월 02일 23:51 직접 편집",
+				"updatedDate": "07월 02일 23:51 편집",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
@@ -145,7 +145,7 @@
 				"companyId": 4,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "ECONOTIMES",
-				"updatedDate": "07월 02일 23:51 직접 편집",
+				"updatedDate": "07월 02일 23:51 편집",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
@@ -165,7 +165,7 @@
 				"companyId": 4,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "ECONOTIMES",
-				"updatedDate": "07월 02일 23:51 직접 편집",
+				"updatedDate": "07월 02일 23:51 편집",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
@@ -191,7 +191,7 @@
 				"companyId": 5,
 				"companyName": "일간스포츠",
 				"companyLogo": "../../images/dailyahnLogo.svg",
-				"updatedDate": "2024-07-03T01:15:00Z",
+				"updatedDate": "2024-07-03 01:15",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 782,
@@ -220,7 +220,7 @@
 				"companyId": 6,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "베리타스알파",
-				"updatedDate": "2024-07-03T01:20:00Z",
+				"updatedDate": "2024-07-03 01:20",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 341,
@@ -264,7 +264,7 @@
 				"companyId": 7,
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "중부메일",
-				"updatedDate": "2024-07-02T10:36:00Z",
+				"updatedDate": "2024-07-02 10:36",
 				"isSubscribe": false,
 				"mainNews": {
 					"id": 123,
