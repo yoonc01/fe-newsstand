@@ -18,7 +18,7 @@ export function	setFieldTab(fieldName, Deque) {
 /*
 * 언론사 정보 및 구독 버튼
 */
-export function	setPressInfo(Deque) {
+function	setPressInfo(Deque) {
 	const	editDateElement = document.querySelector(".EditDate");
 	const	brandMarkElement = document.querySelector(".Brandmark");
 	const	subscribeButtonElement = document.querySelector(".SubscribeButton");
@@ -41,7 +41,7 @@ export function	setPressInfo(Deque) {
 /*
 * main class 데이터 정리
 */
-export function	setMain(Deque) {
+function	setMain(Deque) {
 	const	ThumbnailElement = document.querySelector(".Thumbnail");
 	const	mainTitleElement = document.querySelector(".MainTitle");
 	const	src = Deque.items[0].mainNews.src;
@@ -55,7 +55,7 @@ export function	setMain(Deque) {
 /*
 * sub 뉴스 데이터 입력
 */
-export function	setSub(Deque) {
+function	setSub(Deque) {
 	const	subElement = document.querySelector(".Sub");
 	const	captionElement = document.querySelector(".Caption");
 	const	subNewsArray = Deque.items[0].news;
@@ -68,4 +68,10 @@ export function	setSub(Deque) {
 	subNews = subNews + `<div class="Caption">${newsName} 언론사에서 직접 편집한 뉴스입니다.</div>`;
 	if (subElement)
 		subElement.innerHTML = subNews;
+}
+
+export function	setNews(Deque) {
+	setPressInfo(Deque);
+	setMain(Deque);
+	setSub(Deque);
 }

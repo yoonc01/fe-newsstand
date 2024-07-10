@@ -1,5 +1,5 @@
 import {Deque} from "./Deque.js";
-import {setFieldTab, setPressInfo, setMain, setSub} from "./setData.js";
+import {setFieldTab, setNews} from "./setData.js";
 
 /*
 * 외부에서 data를 받아와 typeDeques에 뉴스 타입별로 deque 생성 및 저장
@@ -29,7 +29,5 @@ export	function	initNewsList(typeDeques, typename) {
 	setFieldTab("sports", typeDeques[typename[4]]);
 	setFieldTab("magazine", typeDeques[typename[5]]);
 	setFieldTab("region", typeDeques[typename[6]]);
-	setPressInfo(typeDeques[typename[0]]);
-	setMain(typeDeques[typename[0]]);
-	setSub(typeDeques[typename[0]]);
+	setNews(typeDeques[typename[0]]);
 }
