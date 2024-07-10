@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 		.then(data => {
 			initData(data, typeDeques);
-			initNewsList(typeDeques, typenames);
+			initNewsList(typenames, typeDeques);
 			getTodaysDate();
 			addEvents(typenames, typeDeques);
 			console.log(typeDeques[typenames[0]].peekFront());

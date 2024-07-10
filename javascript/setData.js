@@ -18,13 +18,13 @@ export function	setFieldTab(fieldName, Deque) {
 /*
 * field별 언론사 정보 및 구독 버튼
 */
-function	setPressInfo(fieldName, Deque) {
-	const	fieldElement = document.querySelector(`.${fieldName}`);
-	if (fieldElement)
+function	setPressInfo(Deque) {
+	const	pressNews = document.querySelector(".PressNews");
+	if (pressNews)
 	{
-		const	editDateElement = fieldElement.querySelector(".EditDate");
-		const	brandMarkElement = fieldElement.querySelector(".Brandmark");
-		const	subscribeButtonElement = fieldElement.querySelector(".SubscribeButton");
+		const	editDateElement = pressNews.querySelector(".EditDate");
+		const	brandMarkElement = pressNews.querySelector(".Brandmark");
+		const	subscribeButtonElement = pressNews.querySelector(".SubscribeButton");
 		const	src = Deque.peekFront().companyLogo;
 		const	is_subscribed = Deque.peekFront().isSubscribe;
 
@@ -45,12 +45,12 @@ function	setPressInfo(fieldName, Deque) {
 /*
 * field별 main class 데이터 정리
 */
-function	setMain(fieldName, Deque) {
-	const	fieldElement = document.querySelector(`.${fieldName}`);
-	if (fieldElement)
+function	setMain(Deque) {
+	const	pressNews = document.querySelector(".PressNews");
+	if (pressNews)
 	{
-		const	ThumbnailElement = fieldElement.querySelector(".Thumbnail");
-		const	mainTitleElement = fieldElement.querySelector(".MainTitle");
+		const	ThumbnailElement = pressNews.querySelector(".Thumbnail");
+		const	mainTitleElement = pressNews.querySelector(".MainTitle");
 		const	src = Deque.peekFront().mainNews.src;
 
 		if (ThumbnailElement)
@@ -63,12 +63,12 @@ function	setMain(fieldName, Deque) {
 /*
 * field별 sub 뉴스 데이터 입력
 */
-function	setSub(fieldName, Deque) {
-	const	fieldElement = document.querySelector(`.${fieldName}`);
-	if (fieldElement)
+function	setSub(Deque) {
+	const	pressNews = document.querySelector(".PressNews");
+	if (pressNews)
 	{
-		const	subElement = fieldElement.querySelector(".Sub");
-		const	captionElement = fieldElement.querySelector(".Caption");
+		const	subElement = pressNews.querySelector(".Sub");
+		const	captionElement = pressNews.querySelector(".Caption");
 		const	subNewsArray = Deque.peekFront().news;
 		const	newsName = Deque.peekFront().companyName;
 		let		subNews = "<ul>";
@@ -84,7 +84,7 @@ function	setSub(fieldName, Deque) {
 
 export function	setNewsList(fieldName, Deque) {
 	setFieldTab(fieldName, Deque);
-	setPressInfo(fieldName, Deque);
-	setMain(fieldName, Deque);
-	setSub(fieldName, Deque);
+	setPressInfo(Deque);
+	setMain(Deque);
+	setSub(Deque);
 }
