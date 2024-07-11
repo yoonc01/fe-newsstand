@@ -60,11 +60,11 @@ function clickButton(current_idx, typenames, typeDeques) {
 
 	document.querySelector(".LeftButton").addEventListener("click", () => {
 		const	current_deque = getCurrentDeque();
-		if (current_deque.current === 1)
+		if (current_deque.getCurrent() === 1)
 		{
 			current_idx(-1, -1);
 			next_deque = getCurrentDeque();
-			next_deque.rotate(-1);
+			next_deque.setCurrent(next_deque.size());
 		}
 		else
 		{
@@ -79,11 +79,11 @@ function clickButton(current_idx, typenames, typeDeques) {
 
 	document.querySelector(".RightButton").addEventListener("click", () => {
 		const	current_deque = getCurrentDeque();
-		if (current_deque.current === current_deque.size())
+		if (current_deque.getCurrent() === current_deque.size())
 		{
-			current_deque.rotate(-1);
 			current_idx(-1, 1);
 			next_deque = getCurrentDeque();
+			next_deque.setCurrent(1);
 		}
 		else
 		{
