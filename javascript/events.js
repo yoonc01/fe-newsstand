@@ -138,6 +138,14 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 		return typeDeques[typenames[current_idx(-1, 0)]];
 	}
 
+	function showSnackbar() {
+		const	snackBar = document.querySelector(".snackBar");
+		snackBar.classList.add("show");
+		setTimeout(() => {
+			snackBar.classList.remove("show");
+		}, 3000);
+	}
+
 	if (subscribeButtonElement)
 	{
 		subscribeButtonElement.addEventListener("click", () => {
@@ -152,14 +160,16 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 			}
 			else
 			{
+				showSnackbar();
 				current_news.isSubscribe = true;
 				subscribed_list[current_news.companyName] = current_news;
 				subscribed_list.length++;
-				setPressInfo(current_deque);
 				console.log(current_news);
 				console.log(subscribed_list);
+
 				// subscribe message;
 			}
+			setPressInfo(current_deque);
 		});
 	}	
 }
