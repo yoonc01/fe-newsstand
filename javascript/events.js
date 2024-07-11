@@ -153,10 +153,31 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 			const	current_news = current_deque.peekFront();
 			if (current_news.isSubscribe)
 			{
-				// message that you really stop subscribing TODO
-				current_news.isSubscribe = false;
-				delete subscribed_list[current_news.companyName];
-				subscribed_list.length--;
+				const	alertElement = document.querySelector(".Alert");
+				if (alertElement)
+				{
+					const	spanElement = alertElement.getElementsByTagName("span")[0];
+					if (spanElement)
+					{
+						spanElement.textContent = current_news.companyName;
+						alertElement.classList.add("show");
+						const	positiveButtonElement = alertElement.querySelector(".PositiveButton");
+						const	negativeButtonElement = alertElement.querySelector(".NegativeButton");
+						if (positiveButtonElement && negativeButtonElement)
+						{
+							positiveButtonElement.addEventListener("click", () => {
+								current_news.isSubscribe = false;
+								delete subscribed_list[current_news.companyName];
+								subscribed_list.length--;
+								alertElement.classList.remove("show");
+								setPressInfo(current_deque);
+							})
+							negativeButtonElement.addEventListener("click", () => {
+								alertElement.classList.remove("show");
+							})
+						}
+					}
+				}
 			}
 			else
 			{
@@ -164,14 +185,10 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 				current_news.isSubscribe = true;
 				subscribed_list[current_news.companyName] = current_news;
 				subscribed_list.length++;
-				console.log(current_news);
-				console.log(subscribed_list);
-
-				// subscribe message;
+				setPressInfo(current_deque);
 			}
-			setPressInfo(current_deque);
 		});
-	}	
+	}
 }
 
 /*
