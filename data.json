@@ -114,7 +114,7 @@
 				"companyLogo": "./asset/logo/sbsbiz.svg",
 				"companyName": "sbsbiz",
 				"updatedDate": "07월 03일 10:24 편집",
-				"isSubscribe": true,
+				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
 					"src": "./asset/Thumbnail/Thumbnail2-1.svg",
@@ -134,7 +134,7 @@
 				"companyLogo": "./asset/logo/sbsbiz.svg",
 				"companyName": "sbsbiz",
 				"updatedDate": "07월 03일 10:24 편집",
-				"isSubscribe": true,
+				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
 					"src": "./asset/Thumbnail/Thumbnail2-1.svg",
@@ -154,7 +154,7 @@
 				"companyLogo": "../../images/dailyahnLogo.svg",
 				"companyName": "YTN사이언스",
 				"updatedDate": "07월 03일 10:24 편집",
-				"isSubscribe": true,
+				"isSubscribe": false,
 				"mainNews": {
 					"id": 1,
 					"src": "./asset/Thumbnail.svg",
