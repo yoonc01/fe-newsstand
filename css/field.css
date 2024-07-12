@@ -6,10 +6,6 @@
   overflow: hidden;
 }
 
-.fieldChosen {
-  background-color: #7890E7;
-}
-
 .Tab {
   float: left;
   width: auto;
@@ -19,6 +15,21 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.SubscribedTab {
+  float: left;
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fieldChosen {
+  background-color: #7890E7;
 }
 
 .text {

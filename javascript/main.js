@@ -5,7 +5,7 @@ import {Deque} from "./Deque.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const	typenames = ["종합/경제", "방송/통신", "IT", "영자지", "스포츠/연예", "매거진/전문지", "지역"];
-	const	subscribed_list = {length: 0};
+	const	subscribed_object = {length: 0};
 	const	typeDeques = {};
 	fetch("../data.json")
 		.then(response => {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			initData(data, typeDeques);
 			initNewsList(typenames, typeDeques);
 			getTodaysDate();
-			addEvents(typenames, typeDeques, subscribed_list);
+			addEvents(typenames, typeDeques, subscribed_object);
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);

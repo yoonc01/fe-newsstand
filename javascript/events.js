@@ -1,5 +1,6 @@
+import {Deque} from "./Deque.js"
 import {findParentWithClass} from "./utils.js";
-import {setPressInfo, setNewsList} from "./setData.js";
+import {setPressInfo, setNewsList, setSubscribedNewsList} from "./setData.js";
 
 /*
 *eventlistener 생성하는 함수들
@@ -39,7 +40,7 @@ function clickFieldTab(current_idx, typenames, typeDeques) {
 					{
 						content.classList.add("fieldChosen");
 						current_idx(idx, 0);
-						setNewsList(tabName, typeDeques[typenames[idx]]);
+						setNewsList(tabName, typeDeques[typenames[current_idx(-1, 0)]]);
 					}
 					else
 						content.classList.remove("fieldChosen");
@@ -52,27 +53,66 @@ function clickFieldTab(current_idx, typenames, typeDeques) {
 /*
 *전체 언론사, 구독 언론사 클릭
 */
-function clickTab(current_idx, typenames, typeDeques, subscribed_list) {
+function clickTab(current_idx, typenames, typeDeques, subscribed_object) {
 	const	fieldNames = ["all", "broad", "it", "english", "sports", "magazine", "region"];
 	const	allPressElement = document.querySelector(".AllPress");
 	const	subscribedPressElement = document.querySelector(".SubscribedPress");
+	const	pressNewsElement = document.querySelector(".PressNews");
+	const	SubscribedNewsElement = document.querySelector(".SubscribedNews");
 
 	if (allPressElement && subscribedPressElement)
 	{
 		allPressElement.addEventListener("click", () => {
+			pressNewsElement.style.display = "block";
+			SubscribedNewsElement.style.display = "none";
 			allPressElement.style.fontWeight = "bold";
 			allPressElement.style.color = "#14212B";
 			subscribedPressElement.style.fontWeight = "normal";
 			subscribedPressElement.style.color = "#879298";
-			const	dq = typeDeques[typenames[current_idx(-1, 0)]];
-			setNewsList(fieldNames[current_idx(-1, 0)], dq.getCurrent(), dq.size(), dq.peekFront());
+			setNewsList(fieldNames[current_idx(-1, 0)],typeDeques[typenames[current_idx(-1, 0)]]);
+			const	tabElements = document.querySelectorAll(".Tab");
+			const	subscribedTabElements = document.querySelectorAll(".SubscribedTab");
+			tabElements.forEach((content) => {
+				content.style.display = "flex";
+			});
+			subscribedTabElements.forEach((content) => {
+				content.style.display = "none";
+			});
 		});
 		subscribedPressElement.addEventListener("click", () => {
-			subscribedPressElement.style.fontWeight = "bold";
-			subscribedPressElement.style.color = "#14212B";
-			allPressElement.style.fontWeight = "normal";
-			allPressElement.style.color = "#879298";
-			//add a function that view a subscribed news list;
+			const	subscribed_list = Object.keys(subscribed_object).filter(item => item !== "length");
+			const	fieldTab = document.querySelector(".FieldTab");
+			const	tabElements = document.querySelectorAll(".Tab");
+			let		className;
+			if (fieldTab)
+			{
+				pressNewsElement.style.display = "none";
+				SubscribedNewsElement.style.display = "block";
+				subscribedPressElement.style.fontWeight = "bold";
+				subscribedPressElement.style.color = "#14212B";
+				allPressElement.style.fontWeight = "normal";
+				allPressElement.style.color = "#879298";
+				if (subscribed_object.length === 0)
+					;//TODO;
+				else
+				{
+					tabElements.forEach((content) => {
+						content.style.display = "none";
+					});
+					subscribed_list.forEach((content, idx) => {
+						if (idx === 0)
+							className = "SubscribedTab fieldChosen";
+						else
+							className = "SubscribedTab";
+						fieldTab.innerHTML = fieldTab.innerHTML + `
+						<div class="${className}" data-tab="${content}">
+							<div class="text">${content}</div>
+						</div>`;
+					});
+					setSubscribedNewsList(subscribed_list[0], subscribed_object[subscribed_list[0]]);
+				}
+				//add a function that view a subscribed news list;
+			}
 		});
 	}
 }
@@ -103,7 +143,7 @@ function clickButton(current_idx, fieldNames, typenames, typeDeques) {
 			next_deque = current_deque;
 			next_deque.rotate(1);
 		}
-		setNewsList(fieldNames[current_idx(-1, 0)], next_deque.getCurrent(), next_deque.size(), next_deque.peekFront());
+		setNewsList(fieldNames[current_idx(-1, 0)], next_deque);
 		tabElements.forEach((content, idx) => {
 			content.classList.toggle("fieldChosen", idx === current_idx(-1, 0));
 		});
@@ -122,7 +162,7 @@ function clickButton(current_idx, fieldNames, typenames, typeDeques) {
 			next_deque = current_deque;
 			next_deque.rotate(-1);
 		}
-		setNewsList(fieldNames[current_idx(-1, 0)], next_deque.getCurrent(), next_deque.size(), next_deque.peekFront());
+		setNewsList(fieldNames[current_idx(-1, 0)], next_deque);
 		tabElements.forEach((content, idx) => {
 			content.classList.toggle("fieldChosen", idx === current_idx(-1, 0));
 		});
@@ -132,8 +172,8 @@ function clickButton(current_idx, fieldNames, typenames, typeDeques) {
 /*
 *subscribe button click
 */
-function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_list) {
-	const	subscribeButtonElement = document.querySelector(".SubscribeButton");
+function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_object) {
+	const	subscribeButtonElement = document.querySelectorAll(".SubscribeButton");
 
 	function getCurrentDeque() {
 		return typeDeques[typenames[current_idx(-1, 0)]];
@@ -149,45 +189,53 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 
 	if (subscribeButtonElement)
 	{
-		subscribeButtonElement.addEventListener("click", () => {
-			const	current_deque = getCurrentDeque();
-			const	current_news = current_deque.peekFront();
-			if (current_news.isSubscribe)
-			{
-				const	alertElement = document.querySelector(".Alert");
-				if (alertElement)
+		subscribeButtonElement.forEach(element => {
+			element.addEventListener("click", () => {
+				const	current_deque = getCurrentDeque();
+				const	current_news = current_deque.peekFront();
+				if (current_news.isSubscribe) //구독 상태일 때 클릭 시
 				{
-					const	spanElement = alertElement.getElementsByTagName("span")[0];
-					if (spanElement)
+					const	snackBar = document.querySelector(".snackBar");
+					if (snackBar)
+						snackBar.classList.remove("show"); //구독 누르고 바로 취소버튼 누를 시 스낵바 안 보이게 하기
+					const	alertElement = document.querySelector(".Alert");
+					if (alertElement)
 					{
-						spanElement.textContent = current_news.companyName;
-						alertElement.classList.add("show");
-						const	positiveButtonElement = alertElement.querySelector(".PositiveButton");
-						const	negativeButtonElement = alertElement.querySelector(".NegativeButton");
-						if (positiveButtonElement && negativeButtonElement)
+						const	spanElement = alertElement.getElementsByTagName("span")[0];
+						if (spanElement)
 						{
-							positiveButtonElement.addEventListener("click", () => {
-								current_news.isSubscribe = false;
-								delete subscribed_list[current_news.companyName];
-								subscribed_list.length--;
-								alertElement.classList.remove("show");
-								setPressInfo(current_deque.peekFront());
-							})
-							negativeButtonElement.addEventListener("click", () => {
-								alertElement.classList.remove("show");
-							})
+							spanElement.textContent = current_news.companyName;
+							alertElement.classList.add("show");
+							const	positiveButtonElement = alertElement.querySelector(".PositiveButton");
+							const	negativeButtonElement = alertElement.querySelector(".NegativeButton");
+							if (positiveButtonElement && negativeButtonElement)
+							{
+								positiveButtonElement.addEventListener("click", () => {
+									current_news.isSubscribe = false;
+									delete subscribed_object[current_news.companyName];
+									 subscribed_object.length--;
+									alertElement.classList.remove("show");
+									setPressInfo(current_deque, ".PressNews");
+									setPressInfo(current_deque, ".SubscribedNews");
+								})
+								negativeButtonElement.addEventListener("click", () => {
+									alertElement.classList.remove("show");
+								})
+							}
 						}
 					}
 				}
-			}
-			else
-			{
-				showSnackbar();
-				current_news.isSubscribe = true;
-				subscribed_list[current_news.companyName] = current_news;
-				subscribed_list.length++;
-				setPressInfo(current_deque.peekFront());
-			}
+				else //구독 상태가 아닐 때 클릭 시
+				{
+					showSnackbar();
+					current_news.isSubscribe = true;
+					subscribed_object[current_news.companyName] = new Deque();
+					subscribed_object[current_news.companyName].addRear(current_news);
+					subscribed_object.length++;
+					setPressInfo(current_deque, ".PressNews");
+					setPressInfo(current_deque, ".SubscribedNews");
+				}
+			});
 		});
 	}
 }
@@ -195,7 +243,7 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 /*
 *외부에서 사용할 함수 다른 추가적인 함수 생성되면 추가할 예정
 */
-export	function	addEvents(typenames, typeDeques, subscribed_list) {
+export	function	addEvents(typenames, typeDeques, subscribed_object) {
 	const	fieldNames = ["all", "broad", "it", "english", "sports", "magazine", "region"];
 	// 클로저를 사용하여 static 변수 선언했지만 addEvents는 한 번 호출하므로 의미가 없는 거 같기두...
 	const	current_idx = (() => {
@@ -216,8 +264,8 @@ export	function	addEvents(typenames, typeDeques, subscribed_list) {
 	})();
 
 	refresh();
-	clickTab(current_idx, typenames, typeDeques, subscribed_list);
+	clickTab(current_idx, typenames, typeDeques, subscribed_object);
 	clickFieldTab(current_idx, typenames, typeDeques);
 	clickButton(current_idx, fieldNames, typenames, typeDeques);
-	clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_list);
+	clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_object);
 }

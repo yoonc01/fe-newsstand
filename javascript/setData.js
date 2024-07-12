@@ -3,35 +3,35 @@ import {Deque} from "./Deque.js"
 /*
 *	필드 탭 선택 시 보이는 오른쪽 숫자(현재 칸/ 총 보유 칸) setting
 */
-export function	setFieldTab(fieldName, current, size) {
+export function	setFieldTab(fieldName, Deque) {
 	const	currentClass = ".current-" + fieldName;
 	const	numClass = "." + fieldName + "-num";
 	const	currentElement = document.querySelector(currentClass);
 	const	numElement = document.querySelector(numClass);
 
 	if (currentElement)
-		currentElement.textContent = current;
+		currentElement.textContent = Deque.getCurrent();
 	if (numElement)
-		numElement.textContent = size;
+		numElement.textContent = Deque.size();
 }
 
 /*
 * field별 언론사 정보 및 구독 버튼
 */
-export function	setPressInfo(news) {
-	const	pressNews = document.querySelector(".PressNews");
+export function	setPressInfo(Deque, pressNewsClass) {
+	const	pressNews = document.querySelector(pressNewsClass);
 	if (pressNews)
 	{
 		const	editDateElement = pressNews.querySelector(".EditDate");
 		const	brandMarkElement = pressNews.querySelector(".Brandmark");
 		const	subscribeButtonElement = pressNews.querySelector(".SubscribeButton");
-		const	src = news.companyLogo;
-		const	is_subscribed = news.isSubscribe;
+		const	src = Deque.peekFront().companyLogo;
+		const	is_subscribed = Deque.peekFront().isSubscribe;
 
 		if (brandMarkElement)
 			brandMarkElement.innerHTML = `<img src=${src}>`;
 		if (editDateElement)
-			editDateElement.textContent = news.updatedDate;
+			editDateElement.textContent = Deque.peekFront().updatedDate;
 		if (subscribeButtonElement)
 		{
 			if (is_subscribed)
@@ -45,31 +45,31 @@ export function	setPressInfo(news) {
 /*
 * field별 main class 데이터 정리
 */
-function	setMain(news) {
-	const	pressNews = document.querySelector(".PressNews");
+function	setMain(Deque, pressNewsClass) {
+	const	pressNews = document.querySelector(pressNewsClass);
 	if (pressNews)
 	{
 		const	ThumbnailElement = pressNews.querySelector(".Thumbnail");
 		const	mainTitleElement = pressNews.querySelector(".MainTitle");
-		const	src = news.mainNews.src;
+		const	src = Deque.peekFront().mainNews.src;
 
 		if (ThumbnailElement)
 			ThumbnailElement.innerHTML = `<img src=${src}>`;
 		if (mainTitleElement)
-			mainTitleElement.textContent = news.mainNews.title;
+			mainTitleElement.textContent = Deque.peekFront().mainNews.title;
 	}
 }
 
 /*
 * field별 sub 뉴스 데이터 입력
 */
-function	setSub(news) {
-	const	pressNews = document.querySelector(".PressNews");
+function	setSub(Deque, pressNewsClass) {
+	const	pressNews = document.querySelector(pressNewsClass);
 	if (pressNews)
 	{
 		const	subElement = pressNews.querySelector(".Sub");
-		const	subNewsArray = news.news;
-		const	newsName = news.companyName;
+		const	subNewsArray = Deque.peekFront().news;
+		const	newsName = Deque.peekFront().companyName;
 		let		subNews = "<ul>";
 
 		for (let news of subNewsArray)
@@ -81,9 +81,16 @@ function	setSub(news) {
 	}
 }
 
-export function	setNewsList(fieldName, current, size, news) {
-	setFieldTab(fieldName, current, size);
-	setPressInfo(news);
-	setMain(news);
-	setSub(news);
+export function	setNewsList(fieldName, Deque) {
+	setFieldTab(fieldName, Deque);
+	setPressInfo(Deque, ".PressNews");
+	setMain(Deque, ".PressNews");
+	setSub(Deque, ".PressNews");
+}
+
+export function	setSubscribedNewsList(fieldName, Deque) {
+	setFieldTab(fieldName, Deque);
+	setPressInfo(Deque, ".SubscribedNews");
+	setMain(Deque, ".SubscribedNews");
+	setSub(Deque, ".SubscribedNews");
 }

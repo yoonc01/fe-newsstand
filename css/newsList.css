@@ -91,6 +91,15 @@
   box-sizing: border-box;
 }
 
+.SubscribedNews {
+  width: 930px;
+  height: auto;
+  border: 1px solid #D2DAE0;
+  padding: 0 24px 24px 24px;
+  box-sizing: border-box;
+  display: none;
+}
+
 .PressInfo {
   width: auto;
   height: auto;
