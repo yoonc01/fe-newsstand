@@ -22,5 +22,6 @@ export	function	initData(data, typeDeques) {
 * 생성된 deque으로 미리 뉴스 세팅
 */
 export	function	initNewsList(typenames, typeDeques) {
-	setNewsList("all", typeDeques[typenames[0]]);
+	const	dq = typeDeques[typenames[0]];
+	setNewsList("all", dq.getCurrent(), dq.size(), dq.peekFront());
 }

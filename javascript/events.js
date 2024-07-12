@@ -64,7 +64,8 @@ function clickTab(current_idx, typenames, typeDeques, subscribed_list) {
 			allPressElement.style.color = "#14212B";
 			subscribedPressElement.style.fontWeight = "normal";
 			subscribedPressElement.style.color = "#879298";
-			setNewsList(fieldNames[current_idx(-1, 0)], typeDeques[typenames[current_idx(-1, 0)]]);
+			const	dq = typeDeques[typenames[current_idx(-1, 0)]];
+			setNewsList(fieldNames[current_idx(-1, 0)], dq.getCurrent(), dq.size(), dq.peekFront());
 		});
 		subscribedPressElement.addEventListener("click", () => {
 			subscribedPressElement.style.fontWeight = "bold";
@@ -102,7 +103,7 @@ function clickButton(current_idx, fieldNames, typenames, typeDeques) {
 			next_deque = current_deque;
 			next_deque.rotate(1);
 		}
-		setNewsList(fieldNames[current_idx(-1, 0)], next_deque);
+		setNewsList(fieldNames[current_idx(-1, 0)], next_deque.getCurrent(), next_deque.size(), next_deque.peekFront());
 		tabElements.forEach((content, idx) => {
 			content.classList.toggle("fieldChosen", idx === current_idx(-1, 0));
 		});
@@ -121,7 +122,7 @@ function clickButton(current_idx, fieldNames, typenames, typeDeques) {
 			next_deque = current_deque;
 			next_deque.rotate(-1);
 		}
-		setNewsList(fieldNames[current_idx(-1, 0)], next_deque);
+		setNewsList(fieldNames[current_idx(-1, 0)], next_deque.getCurrent(), next_deque.size(), next_deque.peekFront());
 		tabElements.forEach((content, idx) => {
 			content.classList.toggle("fieldChosen", idx === current_idx(-1, 0));
 		});
@@ -170,7 +171,7 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 								delete subscribed_list[current_news.companyName];
 								subscribed_list.length--;
 								alertElement.classList.remove("show");
-								setPressInfo(current_deque);
+								setPressInfo(current_deque.peekFront());
 							})
 							negativeButtonElement.addEventListener("click", () => {
 								alertElement.classList.remove("show");
@@ -185,7 +186,7 @@ function clickSubscribeButton(current_idx, typenames, typeDeques, subscribed_lis
 				current_news.isSubscribe = true;
 				subscribed_list[current_news.companyName] = current_news;
 				subscribed_list.length++;
-				setPressInfo(current_deque);
+				setPressInfo(current_deque.peekFront());
 			}
 		});
 	}
